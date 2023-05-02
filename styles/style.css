@@ -19,6 +19,15 @@
     left: calc(50% - 111px);
     /* магия математики от Andrew - выровнили по середине width поделили на два */
 }
+.card_question {
+    top: 82px;
+    left: calc(50% - 111px);
+}
+.card_answer {
+    top: 417px;
+    left: calc(50% - 111px);
+transform: rotate(351deg);
+}
 
 .card__top {
     border-bottom: dashed 1px #000;

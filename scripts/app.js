@@ -1,9 +1,13 @@
 const askMe = document.querySelector(".ask")
 const check = document.querySelector(".check")
 const next = document.querySelector(".next")
-const card = document.querySelector(".card")
-const cardValue = document.querySelector(".card__value")
-const cardHint = document.querySelector(".card__hint")
+const cardQuestion = document.querySelector(".card_question")
+const cardAnswer = document.querySelector(".card_answer")
+const cardValueQuestion = cardQuestion.querySelector(".card__value")
+const cardHintQuestion = cardQuestion.querySelector(".card__hint")
+// document - ищет по всему файлу(документу)
+const cardValueAnswers = cardAnswer.querySelector(".card__value")
+const cardHintAnswers = cardAnswer.querySelector(".card__hint")
 const manual1 = document.querySelector(".manual-1")
 const manual2 = document.querySelector(".manual-2")
 const manual3 = document.querySelector(".manual-3")
@@ -31,8 +35,10 @@ function shuffleDecks() {
     askMe.disabled = false
     next.classList.remove("finish")
     next.disabled = false
-    card.classList.remove("open")
-    card.style.border = 'none';
+    cardQuestion.classList.remove("open")
+    cardQuestion.style.border = 'none';
+    cardAnswer.classList.remove("open")
+    cardAnswer.style.border = 'none';
 
 }
 
@@ -40,15 +46,15 @@ function getAnswers() {
     if (answerNumber < shuffledAnswers.length) {
 
 
-        card.classList.remove("open")
+        cardAnswer.classList.remove("open")
         value = shuffledAnswers[answerNumber]
 
-        cardHint.classList.remove("show")
+        cardHintAnswers.classList.remove("show")
         // ищет объект в массиве и сравнивает с id
-        setTimeout(function () { card.classList.add("open") }, 0);
-        card.style.border = "solid 4px rgb(235, 70, 70)";
-        cardValue.textContent = value.eng
-        cardHint.textContent = value.ru
+        setTimeout(function () { cardAnswer.classList.add("open") }, 0);
+        cardAnswer.style.border = "solid 4px rgb(235, 70, 70)";
+        cardValueAnswers.textContent = value.eng
+        cardHintAnswers.textContent = value.ru
         answerNumber++
     } else {
         askMe.classList.add("finish")
@@ -70,15 +76,15 @@ function showCheckManual() {
 // глагол на первом месте
 function getquestions() {
     if (questionNumber < shuffledQuestions.length) {
-        card.classList.remove("open")
+        cardQuestion.classList.remove("open")
 
-        setTimeout(function () { card.classList.add("open") }, 0);
+        setTimeout(function () { cardQuestion.classList.add("open") }, 0);
         value = shuffledQuestions[questionNumber]
-        cardHint.classList.remove("show")
+        cardHintQuestion.classList.remove("show")
         // обновляет blur на каждой новой карточке
-        cardValue.textContent = value.eng
-        cardHint.textContent = value.ru
-        card.style.border = "solid 4px rgb(5, 184, 5)";
+        cardValueQuestion.textContent = value.eng
+        cardHintQuestion.textContent = value.ru
+        cardQuestion.style.border = "solid 4px rgb(5, 184, 5)";
         questionNumber++
     } else {
         next.classList.add("finish")
@@ -91,13 +97,21 @@ function getquestions() {
 shuffleDecks ()
 // сразу перемешивание при входе 
 
-cardHint.addEventListener("click", () => {
-    cardHint.classList.toggle("show")
+cardHintQuestion.addEventListener("click", () => {
+    cardHintQuestion.classList.toggle("show")
+})
+cardHintAnswers.addEventListener("click", () => {
+    cardHintAnswers.classList.toggle("show")
 })
 
 askMe.addEventListener("click", getAnswers)
 check.addEventListener("click", shuffleDecks)
 next.addEventListener("click", getquestions)
-card.addEventListener("click", () => {
-    card.classList.contains("open") ? null : getquestions()
+cardQuestion.addEventListener("click", () => {
+    cardQuestion.classList.contains("open") ? null : getquestions()
+    
+})
+cardAnswer.addEventListener("click", () => {
+    cardAnswer.classList.contains("open") ? null : getAnswers()
+    //  тоже самое, что if else 
 })
