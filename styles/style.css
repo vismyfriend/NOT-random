@@ -1,0 +1,114 @@
+@import url(https://fonts.googleapis.com/css?family=Neucha:regular);
+@import url(../vendor/normalize.css);
+.body{
+    background-color: #000000;
+    font-family: 'Neucha';
+    padding: 0 12px;
+    font-size: 20px;
+
+}
+.card {
+    background-image: url(../images/card.png);
+    width: 222px;
+    height: 145px;
+    background-size: cover;
+    position: absolute;
+    top: 82px;
+    left: calc(50% - 111px);
+      /* магия математики от Andrew - выровнили по середине width поделили на два */
+}
+.card__top {
+border-bottom: dashed 1px #000    ;    
+}
+.card__top, .card__bottom {
+display: none;
+height: 50%;
+width: 100%; 
+flex-direction: column;
+justify-content: center;
+padding: 0 15px;
+box-sizing: border-box;
+} 
+.card__hint {
+    filter: blur(4px);
+    
+}
+.card__hint.show {
+filter: none;
+}
+.card__value, .card__hint {
+    margin: 0%; 
+    text-align: center;
+    /* у параграфа по умолчанию margins - у списков есть по умолчанию padding */
+}
+.card.open {
+    animation: card-flip 0.8s ease forwards;
+    background-image: none;
+    background-color: white;
+     
+    border-radius: 10px; 
+    box-shadow: 0 0 5px 0 #000;
+    /* тени визуализация */
+    /* 50% это круг */
+}
+.card.open .card__top,
+.card.open .card__bottom  {
+display: flex;
+}
+.deck {
+    width: 300px;
+    margin: 20px calc((100% - 300px) / 2);
+    /* магия математики от Andrew - выровнили по середине */
+}
+button {
+    width: 105px;
+    height: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+    color: #000;
+
+}
+.ask {
+       background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #FA8181;
+    }
+.check {
+          background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #FFF27B;
+ }
+.next {
+    background: linear-gradient(143.84deg, rgba(237, 193, 193, 0.008) 14.48%, rgba(254, 254, 254, 0.2) 49.03%, rgba(162, 40, 40, 0.2) 82.47%), #80FF01;
+ 
+}
+.buttons-container {
+    display: flex;
+    justify-content: space-evenly;
+    /* padding-right:  71px; */
+}
+.pen {
+    position: absolute;
+    width: 50px;
+    top: -85px;
+    right: 33px;
+    transform: rotate(10deg)     ;
+
+
+}
+.notebook__manual {
+    margin-bottom: 15px;
+}
+.notebook__hint {
+    color: #6BAFC5;
+}
+
+
+@keyframes card-flip {
+    from {
+        transform: rotateX(0d);
+    }
+    /* break points - сколько угодно может быть */
+    50% {
+        transform: rotateX(180deg);
+    }
+    to {
+        transform: rotateX(0deg);
+    }
+}
