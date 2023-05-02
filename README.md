@@ -1,2 +1,2 @@
 #a game to learn English
-[go to demo](https://vismyfriend.github.io/thegame/)
+[go to demo](https://vismyfriend.github.io/NOT-random/)
