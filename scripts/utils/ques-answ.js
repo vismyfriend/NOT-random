@@ -2,7 +2,7 @@ const questions = [
     {
         id: 1,
         ru: "	пить пиво	",
-        eng: "	drink beer	"
+        eng: "	drink beer /бир/	"
     },
     {
         id: 2,
@@ -27,7 +27,7 @@ const questions = [
     {
         id: 6,
         ru: "	петь в душе	",
-        eng: "	sing in the shower	"
+        eng: "	sing in the shower /шАуэ/	"
     },
     {
         id: 7,
@@ -57,7 +57,7 @@ const questions = [
     {
         id: 12,
         ru: "	отдыхать	",
-        eng: "	relax	"
+        eng: "	relax /рилЭкс/	"
     },
     {
         id: 13,
@@ -68,6 +68,36 @@ const questions = [
         id: 14,
         ru: "	играть в игры	",
         eng: "	play video games	"
+    },
+    {
+        id: 15,
+        ru: "	болтать по телефону	",
+        eng: "	chat on the phone	"
+    },
+    {
+        id: 16,
+        ru: "	играть в баскетбол	",
+        eng: "	play basketball	"
+    },
+    {
+        id: 17,
+        ru: "	играть в покер	",
+        eng: "	play poker	"
+    },
+    {
+        id: 18,
+        ru: "	играть в нстольные игры	",
+        eng: "	play board games	"
+    },
+    {
+        id: 19,
+        ru: "	чистить зубы	",
+        eng: "	clean teeth	"
+    },
+    {
+        id: 20,
+        ru: "	ездить, кататься на велике	",
+        eng: "	ride a bicycle /бАйсикл/ 	"
     }
 ]
 const answers = [
@@ -140,5 +170,35 @@ const answers = [
         id: 114,
         ru: "	Наши друзья	",
         eng: "	Our friends	"
+    },
+    {
+        id: 115,
+        ru: "	обезьяна	",
+        eng: "	a monkey	"
+    },
+    {
+        id: 116,
+        ru: "	обезьяны	",
+        eng: "	monkeys	"
+    },
+    {
+        id: 117,
+        ru: "	слон	",
+        eng: "	an elephant	"
+    },
+    {
+        id: 118,
+        ru: "	жираф	",
+        eng: "	a giraffe	"
+    },
+    {
+        id: 119,
+        ru: "	циплёнок	",
+        eng: "	a chicken	"
+    },
+    {
+        id: 120,
+        ru: "	один глупый парень	",
+        eng: "	one silly guy	"
     }
 ]	
