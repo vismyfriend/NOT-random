@@ -27,7 +27,7 @@ const questions = [
     {
         id: 6,
         ru: "	петь в душе	",
-        eng: "	sing in the shower /шАуэ/	"
+        eng: "	sing in the shower   /шАуэ/	"
     },
     {
         id: 7,
